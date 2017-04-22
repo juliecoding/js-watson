@@ -40,13 +40,19 @@ app.get('/api/tweets', function(req, res, next) {
         }
         var help = JSON.parse(response.body);
         for (var i = 0; i < help.length; i++) {
-            tweetString += " ", help[i].text;
+            tweetString += (" " + help[i].text);
+            tweetString = tweetString.replace(/[\"\r\n]/, " ");
         }
-        tweetString = tweetString.replace(/[\"\"\r\n”“]/, " ");
         console.log(tweetString);
         res.status(200).send(tweetString);
     });
 });
+
+
+
+
+
+
 
 app.get('/api/pi', function(req, res, next) {
     personality_insights.profile(watson_params, function(error, response) {
