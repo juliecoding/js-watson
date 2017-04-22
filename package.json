@@ -1,0 +1,25 @@
+{
+  "name": "watson-js-rewrite",
+  "version": "1.0.0",
+  "description": "Showing commonalities in people's personalities using the Watson Personality Insights API and their Twitter feeds",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliecoding/watson-js-rewrite.git"
+  },
+  "author": "Julie A. Kohler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juliecoding/watson-js-rewrite/issues"
+  },
+  "homepage": "https://github.com/juliecoding/watson-js-rewrite#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "twitter": "^1.7.0",
+    "watson-developer-cloud": "^2.29.0"
+  }
+}
