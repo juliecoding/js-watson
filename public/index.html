@@ -3,21 +3,35 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Pokemon API Practice!</title>
-    <link rel="stylesheet" href="./styles.css">
+    <title>Twitter Personalities</title>
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
 <body ng-controller="mainController">
-    <div>{{}}</div>
-    <hr />
-    <div>{{}}</div>
-    <!-- <div class="pokeDiv" ng-repeat="p in pokemon track by $index">
-      {{p.name}}
-    </div> -->
+    <h1>What do I have in common with...</h1>
+    <div class="wrapper">
+        <div class="left">
+            <div class="user-portrait"></div>
+        </div>
+
+        <div class="right">
+            <div class="short-column">
+                <div class="small-portrait img1"></div>
+                <div class="small-portrait img2"></div>
+            </div>
+            <div class="long-column">
+                <div class="small-portrait img3"></div>
+                <div class="small-portrait img4"></div>
+                <div class="small-portrait img5"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="./app.js"></script>
+    <script src="./mainController.js"></script>
+    <script src="./mainService.js"></script>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
-<script src="./app.js"></script>
-<script src="./mainService.js"></script>
-<script src="./mainController.js"></script>
+
 
 </html>

@@ -4,16 +4,17 @@ var watson = require('watson-developer-cloud');
 var Twitter = require('twitter');
 var config = require('./config')
 
-var app = express();
+var app = module.exports = express();
 
+app.use(express.static(__dirname + './../public'));
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/public'));
 
 var personality_insights = watson.personality_insights({
     username: config.watson.username,
     password: config.watson.password,
     version: 'v2'
 })
+
 
 var twitter_client = new Twitter({
     consumer_key: config.twitter.consumer_key,
@@ -114,7 +115,7 @@ function flatten(returned_personality_object) {
 
 
 
-flatten(dataToFlatten);
+//flatten(dataToFlatten);
 
 
 
