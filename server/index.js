@@ -64,29 +64,155 @@ app.get('/api/pi', function(req, res, next) {
 
 function flatten(returned_personality_object) {
     var data = {};
-    for (var prop in returned_personality_object['tree']['children']) {
-        if (prop.children) {
-            for (var c2 in prop) {
-                if (c2.children) {
-                    for (var c3 in c2['children']) {
-                        if (c3.children) {
-                            for (var c4 in c3['children']) {
-                                if (c4['category'] == 'personality') {
-                                    data[c4['id']] = c4[percentage]
-                                }
-                                if (!'children' in c3) {
-                                    if (c3['category'] == 'personality') {
-                                        data[c3['id']] = c3[percentage];
-                                    }
-                                }
+    var startingNode = returned_personality_object['tree']['children'];
+    for (var i = 0; i < startingNode.length; i++) {
+        if (startingNode[i].children) {
+            for (var j = 0; j < startingNode[i].children.length; j++) {
+                if (startingNode[i].children[j].children) {
+                    for (var k = 0; k < startingNode[i].children[j].children.length; k++) {
+                        if (startingNode[i].children[j].children[k].children) {
+                            for (var l = 0; l < startingNode[i].children[j].children[k].children.length; l++) {
+                                var needsOrValuesPropName = startingNode[i].children[j].children[k].children[l].id;
+                                var needsOrValuesPercentage = startingNode[i].children[j].children[k].children[l].percentage;
+                                data[needsOrValuesPropName] = needsOrValuesPercentage;
                             }
+                        } else {
+                            var personalityPropName = startingNode[i].children[j].children[k].id;
+                            var personalityPercentage = startingNode[i].children[j].children[k].percentage;
+                            data[personalityPropName] = personalityPercentage;
                         }
                     }
                 }
             }
         }
     }
+    console.log("LUKE, I AM YOUR DATA", data);
     return data;
+}
+
+
+var dataToFlatten = { //Outermost layer: this is an object
+    "id": "*UNKNOWN*",
+    "source": "*UNKNOWN*",
+    "word_count": 259,
+    "word_count_message": "There were 259 words in the input. We need a minimum of 600, preferably 1,200 or more, to compute statistically significant estimates",
+    "processed_lang": "en",
+    "tree": { //Second layer: this is an object
+        "id": "r",
+        "name": "root",
+        "children": [ //Third layer: this is an ARRAY
+            {
+                "id": "personality",
+                "name": "Big 5",
+                "children": [{ //Fourth layer: this is ALSO AN ARRAY
+                    "id": "Openness_parent",
+                    "name": "Openness",
+                    "category": "personality",
+                    "percentage": 0.9481654509544678,
+                    "children": [ //Fifth layer: also an ARRAY (of objects)
+                        { //Sixth layer
+                            "id": "Openness",
+                            "name": "Openness",
+                            "category": "personality",
+                            "percentage": 0.9481654509544678,
+                            "sampling_error": 0.0636292423,
+                            "children": [{
+                                    "id": "Adventurousness",
+                                    "name": "Adventurousness",
+                                    "category": "personality",
+                                    "percentage": 0.47220823673788376,
+                                    "sampling_error": 0.0533429559
+                                },
+                                {
+                                    "id": "Liberalism",
+                                    "name": "Authority-challenging",
+                                    "category": "personality",
+                                    "percentage": 0.9962119858717458,
+                                    "sampling_error": 0.08715480589999999
+                                }
+                            ]
+                        },
+                        {
+                            "id": "Conscientiousness",
+                            "name": "Conscientiousness",
+                            "category": "personality",
+                            "percentage": 0.15068251516960196,
+                            "sampling_error": 0.0797645262,
+                            "children": [{
+                                    "id": "Achievement striving",
+                                    "name": "Achievement striving",
+                                    "category": "personality",
+                                    "percentage": 0.40632666303279535,
+                                    "sampling_error": 0.1029995538
+                                },
+                                {
+                                    "id": "Self-efficacy",
+                                    "name": "Self-efficacy",
+                                    "category": "personality",
+                                    "percentage": 0.3449156159910621,
+                                    "sampling_error": 0.0963107804
+                                }
+                            ]
+                        }
+                    ]
+                }]
+            },
+            {
+                "id": "needs",
+                "name": "Needs",
+                "children": [{
+                    "id": "Stability_parent",
+                    "name": "Stability",
+                    "category": "needs",
+                    "percentage": 0.020086985921163425,
+                    "children": [{
+                            "id": "Challenge",
+                            "name": "Challenge",
+                            "category": "needs",
+                            "percentage": 0.13437194022757287,
+                            "sampling_error": 0.0864508982
+                        },
+                        {
+                            "id": "Structure",
+                            "name": "Structure",
+                            "category": "needs",
+                            "percentage": 0.022351908451296587,
+                            "sampling_error": 0.0823939337
+                        }
+                    ]
+                }]
+            },
+            {
+                "id": "values",
+                "name": "Values",
+                "children": [{
+                    "id": "Conservation_parent",
+                    "name": "Conservation",
+                    "category": "values",
+                    "percentage": 0.0015774733805226648,
+                    "children": [{
+                            "id": "Conservation",
+                            "name": "Conservation",
+                            "category": "values",
+                            "percentage": 0.0015774733805226648,
+                            "sampling_error": 0.0701132456
+                        },
+                        {
+                            "id": "Self-transcendence",
+                            "name": "Self-transcendence",
+                            "category": "values",
+                            "percentage": 0.4622241271139642,
+                            "sampling_error": 0.0848802275
+                        }
+                    ]
+                }]
+            }
+        ]
+    },
+    "warnings": [{
+        "warning_id": "WORD_COUNT_MESSAGE",
+        "message": "There were 259 words in the input. We need a minimum of 600, preferably 1,200 or more, to compute statistically significant estimates"
+    }]
 }
 
 // PERSONALITY LOOKS LIKE SO: 
@@ -115,9 +241,7 @@ function flatten(returned_personality_object) {
 
 
 
-//flatten(dataToFlatten);
-
-
+flatten(dataToFlatten);
 
 var port = config.PORT;
 

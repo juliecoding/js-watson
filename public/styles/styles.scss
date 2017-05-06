@@ -6,6 +6,7 @@
 
 .header {
     font-family: 'Courier', sans-serif;
+    font-size: 1.25em;
     text-align: center;
     margin: 60px auto;
     .fa-twitter {
@@ -18,13 +19,44 @@
 .wrapper {
     display: flex;
     justify-content: space-between;
-    height: 50vh;
-    margin: 0 60px;
+    margin: 0 40px;
+    align-items: flex-start;
     .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         .user-portrait {
-            height: 300px;
-            width: 300px;
+            height: 200px;
+            width: 200px;
             border-radius: 50%;
+            transform: translateY(45%);
+        }
+    }
+    .center {
+        flex-grow: 2;
+        font-family: 'Permanent Marker', sans-serif;
+        padding: 0 35px;
+        h4 {
+            margin: 15px 0;
+        }
+        .theDeets {
+            display: flex;
+            justify-content: center;
+            font-size: 28px;
+            align-items: center;
+            padding: 10px;
+            // animation: fadein 2s;
+            * {
+                margin: 0 35px;
+            }
+        }
+        .trait {
+            text-align: center;
+            font-family: 'Courier', sans-serif;
+            font-size: 28px;
+        }
+        .their-probability {
+            text-align: right;
         }
     }
     .right {
@@ -34,13 +66,19 @@
         .long-column {
             display: flex;
             flex-direction: column;
-            margin: 0 30px;
+            margin: 0 15px;
         }
         .short-column {
-            justify-content: space-around;
+            justify-content: center;
+            div {
+                margin: 15px 0;
+            }
         }
         .long-column {
             justify-content: space-between;
+            div {
+                margin: 15px 0;
+            }
         }
         .small-portrait {
             height: 100px;
@@ -48,6 +86,10 @@
             border-radius: 50%;
         }
     }
+}
+
+.active {
+    box-shadow: 0 0 0 5px white, 0 0 0 10px #1DA1F3;
 }
 
 
@@ -63,29 +105,29 @@
     background-size: cover;
 }
 
-.img1 {
+.kim {
     background: url('../assets/kim.jpg') no-repeat center center;
     background-position: center top;
     background-size: cover;
 }
 
-.img2 {
+.kanye {
     background: url('../assets/kanye.jpg') no-repeat center center;
     background-size: cover;
 }
 
-.img3 {
+.snowden {
     background: url('../assets/snowden.jpg') no-repeat center;
     background-position: center top;
     background-size: cover;
 }
 
-.img4 {
+.lebron {
     background: url('../assets/lebron.jpg') no-repeat center;
     background-size: cover;
 }
 
-.img5 {
+.trump {
     background: url('../assets/trump.jpg') no-repeat center;
     background-position: center top;
     background-size: cover;

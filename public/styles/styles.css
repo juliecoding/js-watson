@@ -4,6 +4,7 @@
 
 .header {
   font-family: 'Courier', sans-serif;
+  font-size: 1.25em;
   text-align: center;
   margin: 60px auto; }
   .header .fa-twitter {
@@ -14,12 +15,37 @@
 .wrapper {
   display: flex;
   justify-content: space-between;
-  height: 50vh;
-  margin: 0 60px; }
-  .wrapper .left .user-portrait {
-    height: 300px;
-    width: 300px;
-    border-radius: 50%; }
+  margin: 0 40px;
+  align-items: flex-start; }
+  .wrapper .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .wrapper .left .user-portrait {
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      transform: translateY(45%); }
+  .wrapper .center {
+    flex-grow: 2;
+    font-family: 'Permanent Marker', sans-serif;
+    padding: 0 35px; }
+    .wrapper .center h4 {
+      margin: 15px 0; }
+    .wrapper .center .theDeets {
+      display: flex;
+      justify-content: center;
+      font-size: 28px;
+      align-items: center;
+      padding: 10px; }
+      .wrapper .center .theDeets * {
+        margin: 0 35px; }
+    .wrapper .center .trait {
+      text-align: center;
+      font-family: 'Courier', sans-serif;
+      font-size: 28px; }
+    .wrapper .center .their-probability {
+      text-align: right; }
   .wrapper .right {
     display: flex;
     justify-content: space-around; }
@@ -27,15 +53,22 @@
     .wrapper .right .long-column {
       display: flex;
       flex-direction: column;
-      margin: 0 30px; }
+      margin: 0 15px; }
     .wrapper .right .short-column {
-      justify-content: space-around; }
+      justify-content: center; }
+      .wrapper .right .short-column div {
+        margin: 15px 0; }
     .wrapper .right .long-column {
       justify-content: space-between; }
+      .wrapper .right .long-column div {
+        margin: 15px 0; }
     .wrapper .right .small-portrait {
       height: 100px;
       width: 100px;
       border-radius: 50%; }
+
+.active {
+  box-shadow: 0 0 0 5px white, 0 0 0 10px #1DA1F3; }
 
 /*****BACKGROUNDS*****/
 .user-portrait {
@@ -43,25 +76,25 @@
   background-position: center top;
   background-size: cover; }
 
-.img1 {
+.kim {
   background: url("../assets/kim.jpg") no-repeat center center;
   background-position: center top;
   background-size: cover; }
 
-.img2 {
+.kanye {
   background: url("../assets/kanye.jpg") no-repeat center center;
   background-size: cover; }
 
-.img3 {
+.snowden {
   background: url("../assets/snowden.jpg") no-repeat center;
   background-position: center top;
   background-size: cover; }
 
-.img4 {
+.lebron {
   background: url("../assets/lebron.jpg") no-repeat center;
   background-size: cover; }
 
-.img5 {
+.trump {
   background: url("../assets/trump.jpg") no-repeat center;
   background-position: center top;
   background-size: cover; }

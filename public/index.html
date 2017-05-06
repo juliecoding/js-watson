@@ -7,6 +7,7 @@
     <script src="https://use.fontawesome.com/415edd1913.js"></script>
     <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="stylesheet" href="./styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto" rel="stylesheet">
 </head>
 
 <body ng-controller="mainController">
@@ -18,15 +19,29 @@
             <div class="user-portrait"></div>
         </div>
 
+        <div class="center">
+            <h4 class="my-probabilty" ng-if="activeMenu">Probability of my profile exhibiting the trait</h4>
+
+            <!--Math.round(celebTrait[0] * 100)-->
+
+            <div class="theDeets" ng-repeat="celebTrait in celebTraits">
+                <h3 class="my-probabilty percentage left-per">{{(celebTrait[0] * 100).toFixed(0)}}%</h3>
+                <h2 class="trait">{{ traitKeys[$index] }}</h2>
+                <h3 class="their-probability percentage right-per">{{(celebTrait[1] * 100).toFixed(0)}}%</h3>
+            </div>
+
+            <h4 class="their-probability" ng-if="activeMenu">Probability of their profile exhibiting the trait</h4>
+        </div>
+
         <div class="right">
             <div class="short-column">
-                <div class="small-portrait img1"></div>
-                <div class="small-portrait img2"></div>
+                <div class="small-portrait kanye" ng-click="getTraits('kanye'); activeMenu='kanye'" ng-class="{active : activeMenu === 'kanye'}"></div>
+                <div class="small-portrait kim" ng-click="getTraits('kim'); activeMenu='kim'" ng-class="{active : activeMenu === 'kim'}"></div>
             </div>
             <div class="long-column">
-                <div class="small-portrait img3"></div>
-                <div class="small-portrait img4"></div>
-                <div class="small-portrait img5"></div>
+                <div class="small-portrait snowden" ng-click="getTraits('snowden'); activeMenu='snowden'" ng-class="{active : activeMenu === 'snowden'}"></div>
+                <div class="small-portrait lebron" ng-click="getTraits('lebron'); activeMenu='lebron'" ng-class="{active : activeMenu === 'lebron'}"></div>
+                <div class="small-portrait trump" ng-click="getTraits('trump'); activeMenu='trump'" ng-class="{active : activeMenu === 'trump'}"></div>
             </div>
         </div>
     </div>
