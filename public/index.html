@@ -2,53 +2,62 @@
 <html ng-app="watsonApp">
 
 <head>
-    <meta charset="utf-8">
-    <title>Twitter Personalities</title>
-    <script src="https://use.fontawesome.com/415edd1913.js"></script>
-    <link rel="stylesheet" href="./styles/normalize.css">
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Twitter Personalities</title>
+  <script src="https://use.fontawesome.com/415edd1913.js"></script>
+  <link rel="stylesheet" href="./styles/normalize.css">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto" rel="stylesheet">
 </head>
 
 <body ng-controller="mainController">
-    <div class="header">
-        <h1>What I <i class="fa fa-twitter fa-2x" aria-hidden="true"></i> in common with...</h1>
+  <div class="header">
+    <h1>What I <i class="fa fa-twitter fa-2x" aria-hidden="true"></i> in common with...</h1>
+  </div>
+  <div class="wrapper">
+    <div class="left">
+      <div class="user-portrait"></div>
     </div>
-    <div class="wrapper">
-        <div class="left">
-            <div class="user-portrait"></div>
-        </div>
 
-        <div class="center">
-            <h4 class="my-probabilty" ng-if="activeMenu">Probability of my profile exhibiting the trait</h4>
+    <div class="center">
+      <h4 class="my-probabilty" ng-if="activeMenu">Probability of my profile exhibiting the trait</h4>
 
-            <!--Math.round(celebTrait[0] * 100)-->
+      <!--Math.round(celebTrait[0] * 100)-->
 
-            <div class="theDeets" ng-repeat="celebTrait in celebTraits">
-                <h3 class="my-probabilty percentage left-per">{{(celebTrait[0] * 100).toFixed(0)}}%</h3>
-                <h2 class="trait">{{ traitKeys[$index] }}</h2>
-                <h3 class="their-probability percentage right-per">{{(celebTrait[1] * 100).toFixed(0)}}%</h3>
-            </div>
+      <div class="theDeets" ng-repeat="celebTrait in celebTraits">
+        <h3 class="my-probabilty percentage left-per">{{(celebTrait[0] * 100).toFixed(0)}}%</h3>
+        <h2 class="trait">{{ traitKeys[$index] }}</h2>
+        <h3 class="their-probability percentage right-per">{{(celebTrait[1] * 100).toFixed(0)}}%</h3>
+      </div>
 
-            <h4 class="their-probability" ng-if="activeMenu">Probability of their profile exhibiting the trait</h4>
-        </div>
-
-        <div class="right">
-            <div class="short-column">
-                <div class="small-portrait kanye" ng-click="getTraits('kanye'); activeMenu='kanye'" ng-class="{active : activeMenu === 'kanye'}"></div>
-                <div class="small-portrait kim" ng-click="getTraits('kim'); activeMenu='kim'" ng-class="{active : activeMenu === 'kim'}"></div>
-            </div>
-            <div class="long-column">
-                <div class="small-portrait snowden" ng-click="getTraits('snowden'); activeMenu='snowden'" ng-class="{active : activeMenu === 'snowden'}"></div>
-                <div class="small-portrait lebron" ng-click="getTraits('lebron'); activeMenu='lebron'" ng-class="{active : activeMenu === 'lebron'}"></div>
-                <div class="small-portrait trump" ng-click="getTraits('trump'); activeMenu='trump'" ng-class="{active : activeMenu === 'trump'}"></div>
-            </div>
-        </div>
+      <h4 class="their-probability" ng-if="activeMenu">Probability of their profile exhibiting the trait</h4>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
-    <script src="./app.js"></script>
-    <script src="./mainController.js"></script>
-    <script src="./mainService.js"></script>
+
+    <div class="right">
+      <div class="short-column">
+        <div class="small-portrait kanye" ng-click="getTraits('kanye'); activeMenu='kanye'" ng-class="{active : activeMenu === 'kanye'}"></div>
+        <div class="small-portrait kim" ng-click="getTraits('kim'); activeMenu='kim'" ng-class="{active : activeMenu === 'kim'}"></div>
+      </div>
+      <div class="long-column">
+        <div class="small-portrait snowden" ng-click="getTraits('snowden'); activeMenu='snowden'" ng-class="{active : activeMenu === 'snowden'}"></div>
+        <div class="small-portrait lebron" ng-click="getTraits('lebron'); activeMenu='lebron'" ng-class="{active : activeMenu === 'lebron'}"></div>
+        <div class="small-portrait trump" ng-click="getTraits('trump'); activeMenu='trump'" ng-class="{active : activeMenu === 'trump'}"></div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <h1>Look here!</h1>
+    <div>{{theKingAndI}}</div>
+    <br />
+    <br />
+    <br />
+    <div>{{awesomeObject}}</div>
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+  <script src="./app.js"></script>
+  <script src="./mainController.js"></script>
+  <script src="./mainService.js"></script>
 </body>
 
 
