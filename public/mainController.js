@@ -31,13 +31,13 @@ angular.module('watsonApp').controller('mainController', function($scope, mainSe
     $scope.theKingAndI = sortStart(response);
 
 
-    $scope.awesomeArray = [];
+    $scope.awesomeObject = {};
     for (let i = 0; i < workableArray.length; i++) {
-      console.log(mainService.prof1.Adventurousness);
-      console.log(workableArray[i][0]);
-      console.log(workableArray[i][1], mainService.prof1[workableArray[i][0]], mainService.prof2[workableArray[i][0]]);
       if (workableArray[i]) {
-        $scope.awesomeArray.push([workableArray[i][1], mainService.prof1[workableArray[i][0]], mainService.prof2[workableArray[i][0]]]);
+        $scope.awesomeObject[workableArray[i][0]] = workableArray[i][1];
+        $scope.awesomeObject.me = mainService.prof1[workableArray[i][0]];
+        $scope.awesomeObject.celeb = mainService.prof2[workableArray[i][0]];
+        console.log("HEYO", $scope.awesomeObject);
       }
     }
   });
@@ -46,3 +46,37 @@ angular.module('watsonApp').controller('mainController', function($scope, mainSe
 
 
 });
+
+
+//Ultimate desired appearance of these objects 
+// kim: {
+//   'Achievement striving': [0.332847185565, 0.347230623563, 0.0143834379983],
+//   'Vulnerability': [0.92062189458, 0.847154386945, 0.0734675076353],
+//   'Trust': [0.426188167294, 0.5011449497, 0.0749567824052],
+//   'Activity level': [0.455105766665, 0.541341110874, 0.0862353442095],
+//   'Altruism': [0.384503757388, 0.285584235948, 0.0989195214401]
+// }
+
+//Alternative model: 
+// var kim = [
+//   {
+//     'Altruism': 0.332847185565,
+//     me: 0.347230623563,
+//     them: 0.0143834379983
+//   },
+//   {
+//     'Vulnerability': 0.92062189458, 
+//     me: 0.847154386945, 
+//     them: 0.0734675076353
+//   },
+//   {
+//     'Trust': 0.426188167294, 
+//     me: 0.5011449497, 
+//     them: 0.0749567824052,
+//   },
+//   {
+//     'Activity level': 0.455105766665, 
+//     me: 0.541341110874, 
+//     them: 0.0862353442095,
+//   }
+// ]
