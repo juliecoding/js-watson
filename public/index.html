@@ -46,13 +46,14 @@
     </div>
   </div>
 
-  <section>
-    <h1>Look here!</h1>
-    <div>{{awesomeObject[0]}}</div>
-    <div>Trait name: {{workableArray[0][0]}}</div>
-    <div>Percentage chance of my profile exhibiting the trait: {{awesomeObject.me}}</div>
-    <div>Percentage chance of their profile exhibiting the trait: {{awesomeObject.celeb}}</div>
+  <section ng-repeat="traitObject in arrayOfTraitObjects">
+    <div>Trait name: {{traitObject.trait}}</div>
+    <div>Degree of Closeness: {{traitObject.commonality}}</div>
+    <div>Percentage chance of my profile exhibiting the trait: {{traitObject.me}}</div>
+    <div>Percentage chance of their profile exhibiting the trait: {{traitObject.celeb}}</div>
+    <br />
   </section>
+
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
   <script src="./app.js"></script>
   <script src="./mainController.js"></script>

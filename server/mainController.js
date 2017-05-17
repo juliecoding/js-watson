@@ -39,7 +39,6 @@ const flatten = function(returned_personality_object) {
       }
     }
   }
-  console.log("LUKE, I AM YOUR DATA", data);
   return data;
 }
 
