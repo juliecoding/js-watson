@@ -16,7 +16,6 @@ angular.module('watsonApp').service('mainService', function($http) {
       serv.prof1 = response.data;
       return serv.getProfile(profile2).then(function(response) {
         serv.prof2 = response.data;
-
         compared_data = {};
         console.log(serv.prof1);
         console.log(serv.prof2);

@@ -6,6 +6,8 @@ var mainController = require('./mainController');
 
 var app = module.exports = express();
 
+console.log(process.env)
+
 app.use(express.static(__dirname + './../public'));
 app.use(bodyParser.json());
 

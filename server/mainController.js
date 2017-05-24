@@ -6,7 +6,7 @@ var twitter_client = new Twitter({
   consumer_secret: process.env['twitter.consumer_secret'],
   access_token_key: process.env['twitter.access_token_key'],
   access_token_secret: process.env['twitter.access_token_secret']
-})
+});
 
 var personality_insights = watson.personality_insights({
   username: process.env['watson.username'],
