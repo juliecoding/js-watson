@@ -2,17 +2,21 @@ var Twitter = require('twitter');
 var watson = require('watson-developer-cloud');
 
 var twitter_client = new Twitter({
-  consumer_key: process.env['twitter.consumer_key'],
-  consumer_secret: process.env['twitter.consumer_secret'],
-  access_token_key: process.env['twitter.access_token_key'],
-  access_token_secret: process.env['twitter.access_token_secret']
+  consumer_key: process.env.twitter_consumer_key,
+  consumer_secret: process.env.twitter_consumer_secret,
+  access_token_key: process.env.twitter_access_token_key,
+  access_token_secret: process.env.twitter_access_token_secret
 });
 
-var personality_insights = watson.personality_insights({
-  username: process.env['watson.username'],
-  password: process.env['watson.password'],
+const personality_insights = watson.personality_insights({
+  username: process.env.watson_username,
+  password: process.env.watson_password,
   version: 'v2'
 });
+
+console.log(process.env.twitter_consumer_key);
+console.log(process.env.watson_username);
+console.log(process.env.watson_password);
 
 const flatten = function(returned_personality_object) {
   var data = {};

@@ -6,14 +6,16 @@ var mainController = require('./mainController');
 
 var app = module.exports = express();
 
-console.log(process.env)
-
 app.use(express.static(__dirname + './../public'));
 app.use(bodyParser.json());
 
 app.get('/api/pi/:twitter_handle', mainController.getPersonalityInsights);
 
-var port = process.env['port'];
+console.log(process.env.twitter_consumer_key);
+console.log(process.env.watson_username);
+console.log(process.env.watson_password);
+
+var port = process.env.PORT;
 app.listen(port, function() {
   console.log("Listening on", port);
 })
