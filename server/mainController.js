@@ -1,17 +1,16 @@
-var config = require('./config');
 var Twitter = require('twitter');
 var watson = require('watson-developer-cloud');
 
 var twitter_client = new Twitter({
-  consumer_key: config.twitter.consumer_key,
-  consumer_secret: config.twitter.consumer_secret,
-  access_token_key: config.twitter.access_token_key,
-  access_token_secret: config.twitter.access_token_secret
+  consumer_key: process.env['twitter.consumer_key'],
+  consumer_secret: process.env['twitter.consumer_secret'],
+  access_token_key: process.env['twitter.access_token_key'],
+  access_token_secret: process.env['twitter.access_token_secret']
 })
 
 var personality_insights = watson.personality_insights({
-  username: config.watson.username,
-  password: config.watson.password,
+  username: process.env['watson.username'],
+  password: process.env['watson.password'],
   version: 'v2'
 });
 

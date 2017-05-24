@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 app.get('/api/pi/:twitter_handle', mainController.getPersonalityInsights);
 
-var port = config.PORT;
+var port = process.env['port'];
 app.listen(port, function() {
   console.log("Listening on", port);
 })
