@@ -2,7 +2,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var watson = require('watson-developer-cloud'); //Same as below.
 var Twitter = require('twitter'); //Can I get rid of this because it's over in the Twitter service?? 
-var config = require('./config')
 var mainController = require('./mainController');
 
 var app = module.exports = express();
