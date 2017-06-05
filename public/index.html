@@ -22,10 +22,10 @@
     <div class="center">
       <h4 class="my-probabilty" ng-if="activeMenu">Probability of my profile exhibiting the trait</h4>
 
-      <div class="theDeets" ng-repeat="celebTrait in celebTraits">
-        <h3 class="my-probabilty percentage left-per">{{(celebTrait[0] * 100).toFixed(0)}}%</h3>
-        <h2 class="trait">{{ traitKeys[$index] }}</h2>
-        <h3 class="their-probability percentage right-per">{{(celebTrait[1] * 100).toFixed(0)}}%</h3>
+      <div class="theDeets" ng-repeat="traitObject in arrayOfTraitObjects">
+        <h3 class="my-probabilty percentage left-per">{{(traitObject.me * 100).toFixed(0)}}%</h3>
+        <h2 class="trait">{{traitObject.trait}}</h2>
+        <h3 class="their-probability percentage right-per">{{(traitObject.celeb * 100).toFixed(0)}}%</h3>
       </div>
 
       <h4 class="their-probability" ng-if="activeMenu">Probability of their profile exhibiting the trait</h4>
@@ -33,33 +33,26 @@
 
     <div class="right">
       <div class="short-column">
-        <div class="small-portrait kanye" ng-click="getTraits('kanye'); getTraits2('@juliecoding', '@KanyeOfficial'); activeMenu='kanye'" ng-class="{active : activeMenu === 'kanye'}"></div>
-        <div class="small-portrait kim" ng-click="getTraits('kim'); activeMenu='kim'" ng-class="{active : activeMenu === 'kim'}"></div>
+        <div class="small-portrait queenie" ng-click="getTraits2('@juliecoding', '@RoyalFamily'); activeMenu='kanye'" ng-class="{active : activeMenu === 'kanye'}"></div>
+        <div class="small-portrait lebron" ng-click="getTraits2('@juliecoding', '@KingJames'); activeMenu='lebron'" ng-class="{active : activeMenu === 'lebron'}"></div>
       </div>
       <div class="long-column">
-        <div class="small-portrait snowden" ng-click="getTraits('snowden'); activeMenu='snowden'" ng-class="{active : activeMenu === 'snowden'}"></div>
-        <div class="small-portrait lebron" ng-click="getTraits('lebron'); activeMenu='lebron'" ng-class="{active : activeMenu === 'lebron'}"></div>
-        <div class="small-portrait trump" ng-click="getTraits('trump'); activeMenu='trump'" ng-class="{active : activeMenu === 'trump'}"></div>
+        <div class="small-portrait snowden" ng-click="getTraits2('@juliecoding', '@Snowden'); activeMenu='snowden'" ng-class="{active : activeMenu === 'snowden'}"></div>
+        <div class="small-portrait kim" ng-click="getTraits2('@juliecoding', '@KimKardashian'); activeMenu='kim'" ng-class="{active : activeMenu === 'kim'}"></div>
+        <div class="small-portrait trump" ng-click="getTraits2('@juliecoding', '@realDonaldTrump'); activeMenu='trump'" ng-class="{active : activeMenu === 'trump'}"></div>
       </div>
     </div>
   </div>
 
-  <div>
-    <!--<p>Hey, thanks for viewing my project. It's based on <a>this tutorial</a>, but I rewrote it to work with Node. The version you're seeing here may not be making active API calls and may instead be using staged data from old calls. Blame the co$t of IBM's Watson.</p>-->
+  <!--<div class="footer">
+    <p>Hey, thanks for viewing my project. It's based on <a href="https://www.codecademy.com/learn/ibm-watson">this</a> tutorial, but I rewrote it to work with Node. Head's up: as soon as my free access to IBM's Watson API expires, this app will use staged
+      data.
+    </p>-->
 
-
-    <section ng-repeat="traitObject in arrayOfTraitObjects">
-      <div>Trait name: {{traitObject.trait}}</div>
-      <div>Degree of Closeness: {{traitObject.commonality}}</div>
-      <div>Percentage chance of my profile exhibiting the trait: {{traitObject.me}}</div>
-      <div>Percentage chance of their profile exhibiting the trait: {{traitObject.celeb}}</div>
-      <br />
-    </section>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
-    <script src="./app.js"></script>
-    <script src="./mainCtrl.js"></script>
-    <script src="./mainService.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+  <script src="./app.js"></script>
+  <script src="./mainCtrl.js"></script>
+  <script src="./mainService.js"></script>
 </body>
 
 

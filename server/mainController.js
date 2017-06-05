@@ -1,7 +1,10 @@
-var Twitter = require('twitter');
-var watson = require('watson-developer-cloud');
+const dotenv = require('dotenv');
+dotenv.load();
 
-var twitter_client = new Twitter({
+const Twitter = require('twitter'),
+  watson = require('watson-developer-cloud');
+
+const twitter_client = new Twitter({
   consumer_key: process.env.twitter_consumer_key,
   consumer_secret: process.env.twitter_consumer_secret,
   access_token_key: process.env.twitter_access_token_key,
@@ -13,10 +16,6 @@ const personality_insights = watson.personality_insights({
   password: process.env.watson_password,
   version: 'v2'
 });
-
-console.log(process.env.twitter_consumer_key);
-console.log(process.env.watson_username);
-console.log(process.env.watson_password);
 
 const flatten = function(returned_personality_object) {
   var data = {};
@@ -47,7 +46,6 @@ const flatten = function(returned_personality_object) {
 
 const getPersonalityInsights = function(req, res, next) {
   let tweetString = '';
-
   const twitter_params = {
     screen_name: req.params.twitter_handle,
     count: 200,
@@ -58,13 +56,13 @@ const getPersonalityInsights = function(req, res, next) {
     if (error) {
       console.log(error);
     }
-    var help = JSON.parse(response.body);
-    for (var i = 0; i < help.length; i++) {
+    let help = JSON.parse(response.body);
+    for (let i = 0; i < help.length; i++) {
       tweetString += (" " + help[i].text);
-      tweetString = tweetString.replace(/[\"\r\n]/, " ");
+      tweetString = tweetString.replace(/[\"\r\n]/g, " ");
     }
 
-    let watson_params = {
+    var watson_params = {
       text: tweetString
     }
 

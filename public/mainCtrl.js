@@ -10,8 +10,8 @@ angular.module('watsonApp').controller('mainController', function($scope, mainSe
   };
 
 
-  $scope.getTraits2 = function(user1, user2) {
-    mainService.compare(user1, user2).then(function(response) {
+  $scope.getTraits2 = function(profile1, profile2) {
+    mainService.compare(profile1, profile2).then(function(response) {
       let workableArray = [];
       const sortStart = (obj) => {
         for (var prop in obj) {
@@ -43,28 +43,3 @@ angular.module('watsonApp').controller('mainController', function($scope, mainSe
   }
 
 });
-
-
-//Ultimate desired appearance of these objects 
-// var kim = [
-//   {
-//     'Altruism': 0.332847185565,   //degree of separation
-//     me: 0.347230623563,          //my score
-//     celeb: 0.0143834379983       //their score 
-//   },
-//   {
-//     'Vulnerability': 0.92062189458, 
-//     me: 0.847154386945, 
-//     celeb: 0.0734675076353
-//   },
-//   {
-//     'Trust': 0.426188167294, 
-//     me: 0.5011449497, 
-//     celeb: 0.0749567824052,
-//   },
-//   {
-//     'Activity level': 0.455105766665, 
-//     me: 0.541341110874, 
-//     celeb: 0.0862353442095,
-//   }
-// ]

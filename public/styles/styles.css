@@ -1,9 +1,10 @@
+/***** FONTS *****/
 * {
   margin: 0;
   padding: 0; }
 
 .header {
-  font-family: 'Courier', sans-serif;
+  font-family: "Courier", sans-serif;
   font-size: 1.25em;
   text-align: center;
   margin: 60px auto; }
@@ -28,7 +29,7 @@
       transform: translateY(45%); }
   .wrapper .center {
     flex-grow: 2;
-    font-family: 'Permanent Marker', sans-serif;
+    font-family: "Permanent Marker", sans-serif;
     padding: 0 35px; }
     .wrapper .center h4 {
       margin: 15px 0; }
@@ -42,7 +43,7 @@
         margin: 0 35px; }
     .wrapper .center .trait {
       text-align: center;
-      font-family: 'Courier', sans-serif;
+      font-family: "Courier", sans-serif;
       font-size: 28px; }
     .wrapper .center .their-probability {
       text-align: right; }
@@ -70,6 +71,10 @@
 .active {
   box-shadow: 0 0 0 5px white, 0 0 0 10px #1DA1F3; }
 
+.footer {
+  font-family: "Courier", sans-serif;
+  padding: 50px 100px 0 100px; }
+
 /*****BACKGROUNDS*****/
 .user-portrait {
   background: url("../assets/kohler.jpg") no-repeat;
@@ -81,8 +86,8 @@
   background-position: center top;
   background-size: cover; }
 
-.kanye {
-  background: url("../assets/kanye.jpg") no-repeat center center;
+.queenie {
+  background: url("../assets/qeii.jpg") no-repeat center center;
   background-size: cover; }
 
 .snowden {

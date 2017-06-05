@@ -1,95 +1,106 @@
+/***** FONTS *****/
+
+$main: 'Courier',
+sans-serif;
+$secondary: 'Permanent Marker',
+sans-serif;
 * {
-    margin: 0;
-    padding: 0;
-    //background-color: #E5F5FE;
+  margin: 0;
+  padding: 0;
+  //background-color: #E5F5FE;
 }
 
 .header {
-    font-family: 'Courier', sans-serif;
-    font-size: 1.25em;
-    text-align: center;
-    margin: 60px auto;
-    .fa-twitter {
-        color: #1DA1F3;
-        vertical-align: -10px;
-        margin: 0 3px;
-    }
+  font-family: $main;
+  font-size: 1.25em;
+  text-align: center;
+  margin: 60px auto;
+  .fa-twitter {
+    color: #1DA1F3;
+    vertical-align: -10px;
+    margin: 0 3px;
+  }
 }
 
 .wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 40px;
+  align-items: flex-start;
+  .left {
     display: flex;
-    justify-content: space-between;
-    margin: 0 40px;
-    align-items: flex-start;
-    .left {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        .user-portrait {
-            height: 200px;
-            width: 200px;
-            border-radius: 50%;
-            transform: translateY(45%);
-        }
+    flex-direction: column;
+    justify-content: center;
+    .user-portrait {
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      transform: translateY(45%);
     }
-    .center {
-        flex-grow: 2;
-        font-family: 'Permanent Marker', sans-serif;
-        padding: 0 35px;
-        h4 {
-            margin: 15px 0;
-        }
-        .theDeets {
-            display: flex;
-            justify-content: center;
-            font-size: 28px;
-            align-items: center;
-            padding: 10px;
-            // animation: fadein 2s;
-            * {
-                margin: 0 35px;
-            }
-        }
-        .trait {
-            text-align: center;
-            font-family: 'Courier', sans-serif;
-            font-size: 28px;
-        }
-        .their-probability {
-            text-align: right;
-        }
+  }
+  .center {
+    flex-grow: 2;
+    font-family: $secondary;
+    padding: 0 35px;
+    h4 {
+      margin: 15px 0;
     }
-    .right {
-        display: flex;
-        justify-content: space-around;
-        .short-column,
-        .long-column {
-            display: flex;
-            flex-direction: column;
-            margin: 0 15px;
-        }
-        .short-column {
-            justify-content: center;
-            div {
-                margin: 15px 0;
-            }
-        }
-        .long-column {
-            justify-content: space-between;
-            div {
-                margin: 15px 0;
-            }
-        }
-        .small-portrait {
-            height: 100px;
-            width: 100px;
-            border-radius: 50%;
-        }
+    .theDeets {
+      display: flex;
+      justify-content: center;
+      font-size: 28px;
+      align-items: center;
+      padding: 10px;
+      // animation: fadein 2s;
+      * {
+        margin: 0 35px;
+      }
     }
+    .trait {
+      text-align: center;
+      font-family: $main;
+      font-size: 28px;
+    }
+    .their-probability {
+      text-align: right;
+    }
+  }
+  .right {
+    display: flex;
+    justify-content: space-around;
+    .short-column,
+    .long-column {
+      display: flex;
+      flex-direction: column;
+      margin: 0 15px;
+    }
+    .short-column {
+      justify-content: center;
+      div {
+        margin: 15px 0;
+      }
+    }
+    .long-column {
+      justify-content: space-between;
+      div {
+        margin: 15px 0;
+      }
+    }
+    .small-portrait {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+    }
+  }
 }
 
 .active {
-    box-shadow: 0 0 0 5px white, 0 0 0 10px #1DA1F3;
+  box-shadow: 0 0 0 5px white, 0 0 0 10px #1DA1F3;
+}
+
+.footer {
+  font-family: $main;
+  padding: 50px 100px 0 100px;
 }
 
 
@@ -100,35 +111,35 @@
 //     background-size: cover;
 // }
 .user-portrait {
-    background: url('../assets/kohler.jpg') no-repeat;
-    background-position: center top;
-    background-size: cover;
+  background: url('../assets/kohler.jpg') no-repeat;
+  background-position: center top;
+  background-size: cover;
 }
 
 .kim {
-    background: url('../assets/kim.jpg') no-repeat center center;
-    background-position: center top;
-    background-size: cover;
+  background: url('../assets/kim.jpg') no-repeat center center;
+  background-position: center top;
+  background-size: cover;
 }
 
-.kanye {
-    background: url('../assets/kanye.jpg') no-repeat center center;
-    background-size: cover;
+.queenie {
+  background: url('../assets/qeii.jpg') no-repeat center center;
+  background-size: cover;
 }
 
 .snowden {
-    background: url('../assets/snowden.jpg') no-repeat center;
-    background-position: center top;
-    background-size: cover;
+  background: url('../assets/snowden.jpg') no-repeat center;
+  background-position: center top;
+  background-size: cover;
 }
 
 .lebron {
-    background: url('../assets/lebron.jpg') no-repeat center;
-    background-size: cover;
+  background: url('../assets/lebron.jpg') no-repeat center;
+  background-size: cover;
 }
 
 .trump {
-    background: url('../assets/trump.jpg') no-repeat center;
-    background-position: center top;
-    background-size: cover;
+  background: url('../assets/trump.jpg') no-repeat center;
+  background-position: center top;
+  background-size: cover;
 }
