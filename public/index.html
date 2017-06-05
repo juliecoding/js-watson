@@ -22,8 +22,6 @@
     <div class="center">
       <h4 class="my-probabilty" ng-if="activeMenu">Probability of my profile exhibiting the trait</h4>
 
-      <!--Math.round(celebTrait[0] * 100)-->
-
       <div class="theDeets" ng-repeat="celebTrait in celebTraits">
         <h3 class="my-probabilty percentage left-per">{{(celebTrait[0] * 100).toFixed(0)}}%</h3>
         <h2 class="trait">{{ traitKeys[$index] }}</h2>
@@ -35,7 +33,7 @@
 
     <div class="right">
       <div class="short-column">
-        <div class="small-portrait kanye" ng-click="getTraits('kanye'); activeMenu='kanye'" ng-class="{active : activeMenu === 'kanye'}"></div>
+        <div class="small-portrait kanye" ng-click="getTraits('kanye'); getTraits2('@juliecoding', '@KanyeOfficial') activeMenu='kanye'" ng-class="{active : activeMenu === 'kanye'}"></div>
         <div class="small-portrait kim" ng-click="getTraits('kim'); activeMenu='kim'" ng-class="{active : activeMenu === 'kim'}"></div>
       </div>
       <div class="long-column">
@@ -46,18 +44,22 @@
     </div>
   </div>
 
-  <!--<section ng-repeat="traitObject in arrayOfTraitObjects">
-    <div>Trait name: {{traitObject.trait}}</div>
-    <div>Degree of Closeness: {{traitObject.commonality}}</div>
-    <div>Percentage chance of my profile exhibiting the trait: {{traitObject.me}}</div>
-    <div>Percentage chance of their profile exhibiting the trait: {{traitObject.celeb}}</div>
-    <br />
-  </section>-->
+  <div>
+    <!--<p>Hey, thanks for viewing my project. It's based on <a>this tutorial</a>, but I rewrote it to work with Node. The version you're seeing here may not be making active API calls and may instead be using staged data from old calls. Blame the co$t of IBM's Watson.</p>-->
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
-  <script src="./app.js"></script>
-  <script src="./mainController.js"></script>
-  <script src="./mainService.js"></script>
+
+    <!--<section ng-repeat="traitObject in arrayOfTraitObjects">
+      <div>Trait name: {{traitObject.trait}}</div>
+      <div>Degree of Closeness: {{traitObject.commonality}}</div>
+      <div>Percentage chance of my profile exhibiting the trait: {{traitObject.me}}</div>
+      <div>Percentage chance of their profile exhibiting the trait: {{traitObject.celeb}}</div>
+      <br />
+    </section>-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="./app.js"></script>
+    <script src="./mainCtrl.js"></script>
+    <script src="./mainService.js"></script>
 </body>
 
 
