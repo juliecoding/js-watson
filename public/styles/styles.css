@@ -81,6 +81,11 @@
   background-position: center top;
   background-size: cover; }
 
+.kanye {
+  background: url("../assets/kanye.jpg") no-repeat center;
+  background-position: center top;
+  background-size: cover; }
+
 .kim {
   background: url("../assets/kim.jpg") no-repeat center center;
   background-position: center top;

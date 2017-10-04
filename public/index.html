@@ -33,7 +33,8 @@
 
     <div class="right">
       <div class="short-column">
-        <div class="small-portrait queenie" ng-click="getTraits2('@juliecoding', '@RoyalFamily'); activeMenu='kanye'" ng-class="{active : activeMenu === 'kanye'}"></div>
+        <!-- <div class="small-portrait queenie" ng-click="getTraits2('@juliecoding', '@RoyalFamily'); activeMenu='queenie'" ng-class="{active : activeMenu === 'queenie'}"></div> -->
+        <div class="small-portrait kanye" ng-click="getTraits2('@juliecoding', '@kanye'); activeMenu='kanye'" ng-class="{active : activeMenu === 'kanye'}"></div>
         <div class="small-portrait lebron" ng-click="getTraits2('@juliecoding', '@KingJames'); activeMenu='lebron'" ng-class="{active : activeMenu === 'lebron'}"></div>
       </div>
       <div class="long-column">
@@ -44,10 +45,11 @@
     </div>
   </div>
 
-  <!--<div class="footer">
-    <p>Hey, thanks for viewing my project. It's based on <a href="https://www.codecademy.com/learn/ibm-watson">this</a> tutorial, but I rewrote it to work with Node. Head's up: as soon as my free access to IBM's Watson API expires, this app will use staged
+  <div class="footer">
+    <p>Hey, thanks for viewing my project. It's based on <a href="https://www.codecademy.com/learn/ibm-watson">this</a> tutorial, but I rewrote it to work with Node. <br /> Head's up: as soon as my free access to IBM's Watson API expires, this app will use staged
       data.
-    </p>-->
+    </p>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
   <script src="./app.js"></script>
